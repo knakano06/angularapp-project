@@ -1,0 +1,4 @@
+.big-text {
+  /* this will make the text become uppercase letters */
+  text-transform: uppercase;
+}
