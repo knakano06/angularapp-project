@@ -1,3 +1,4 @@
+/* 
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../../models/User'
@@ -77,6 +78,7 @@ export class UsersComponent implements OnInit {
         } 
     }); */
 
+/*
     this.setCurrentClasses();
     this.setCurrentStyles();
 
@@ -109,3 +111,4 @@ export class UsersComponent implements OnInit {
     }
   }
 }
+ */

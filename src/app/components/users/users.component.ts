@@ -30,9 +30,7 @@ export class UsersComponent implements OnInit {
           state: 'PA'
         },
         // ..com/height/width
-        image: 'http://lorempixel.com/600/600/people/3',
         isActive: true, // this will set the bg-light background to the card
-        balance: 100,
         registered: new Date('01/02/2019 08:30:00')
       },
       {
@@ -44,9 +42,7 @@ export class UsersComponent implements OnInit {
           city: 'Yokohama',
           state: 'JAPAN'
         },
-        image: 'http://lorempixel.com/600/600/people/2',
         isActive: false,
-        balance: 200,
         registered: new Date('10/09/2017 18:20:00')
       },
       {
@@ -58,9 +54,7 @@ export class UsersComponent implements OnInit {
           city: 'Northfield',
           state: 'MN'
         },
-        image: 'http://lorempixel.com/600/600/people/1',
         isActive: true, // this will set the bg-light background to the card
-        balance: 450,
         registered: new Date('02/15/2019 5:40:00')
       }
     ];

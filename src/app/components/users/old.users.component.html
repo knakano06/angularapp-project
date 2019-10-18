@@ -1,58 +1,60 @@
-
+<!-- This is just a note; it is not contributing to any part of the program...
+ 
 <h2>Users</h2>
 
-<!-- []: bind properties - using boolean set in the users.component.ts to control the program -->
+[]: bind properties - using boolean set in the users.component.ts to control the program
 
-<!-- add a button -->
-<!-- [disabled] == "!enableAdd" will only allow the user to be added when enableAdd in users.components.ts is set to true -->
-<!-- [ngClass] = "currentClasses" is a ngClass which sets the button according to the currentClasses -->
+Add a button:
+[disabled] == "!enableAdd" will only allow the user to be added when enableAdd in users.components.ts is set to true:
+[ngClass] = "currentClasses" is a ngClass which sets the button according to the currentClasses:
+
 <button [disabled] = "!enableAdd" class = "btn btn-block mb-3" [ngClass] = "currentClasses">Add New User</button>
 
-<!-- make sure we have one or more user(s) and else, go below to print message -->
+make sure we have one or more user(s) and else, go below to print message:
 <ul class = "list-unstyled" *ngIf = "loaded && users?.length > 0; else noUsers">
   
-  <!-- loop through using *ngFor-->
-  <!-- mb-2 puts some spaces between each card -->
+  Loop through using *ngFor:
+  mb-2 puts some spaces between each card:
 
-  <!-- Class Binding: [class.bg-light] changes background color according to the state of user -->
-  <!-- Style Binding:[style.border-color] = "user.isActive ? 'green' : '' " will set the border of the user's card 
-  to green if user's isActive is true and otherwise, do nothing -->
+  Class Binding: [class.bg-light] changes background color according to the state of user:
+  Style Binding:[style.border-color] = "user.isActive ? 'green' : '' " will set the border of the user's card 
+    to green if user's isActive is true and otherwise, do nothing:
   <li class = "card card-body mb-2" *ngFor = "let user of users" 
   [class.bg-light] = "user.isActive" [style.border-color] = "user.isActive ? 'green' : '' ">
    
     <div class = "row">
       <div class="col-sm-4">
-        <!-- img-fluid class will make the image fit inside the card -->
+        img-fluid class will make the image fit inside the card:
         <img *ngIf = "user.image" class = "img-fluid" [src] = "user.image" alt = "">
         
-        <!-- alternative ways to do the above property binding...-->
-        <!-- <img *ngIf = "user.image" class = "img-fluid" src = "{{user.image}}" alt = ""> -->
-        <!-- <img *ngIf = "user.image" class = "img-fluid" blind-src = "user.image" alt = ""> -->
+        Alternative ways to do the above property binding...:
+          <img *ngIf = "user.image" class = "img-fluid" src = "{{user.image}}" alt = "">
+          <img *ngIf = "user.image" class = "img-fluid" blind-src = "user.image" alt = "">
 
       </div>
 
       <div class="col-sm-8">
-          <!-- ngStyle: this will display user's first name and last name in the middle of the box
-          if showExtended is set to false -->
-          <!-- Pipes: "... | uppercase" it will make the string in uppercase -->
+          ngStyle: this will display user's first name and last name in the middle of the box
+          if showExtended is set to false:
+          Pipes: "... | uppercase" it will make the string in uppercase:
           <h3 [ngStyle] = "currentStyles">{{ user.firstName }} {{ user.lastName | uppercase }}</h3>
 
-          <!-- only show the extended details if the user has an address/age -->
+          Only show the extended details if the user has an address/age:
           <ul class = "list-group" *ngIf = "showExtended && user.age && user.address">
             <li class = "list-group-item">Age: {{ user.age }}</li>
             <li class = "list-group-item">Address: {{ user.address.street }} {{ user.address.city }} {{ user.address.state }}</li>
             
-            <!-- Currency Pipe: "... | currency: converts the number to currency (default is USD)
-               or you can set a parameter by writing "currency: " " -->
-            <!-- Percent Pipe: num | percent, where num specifies the percentage -->
+            Currency Pipe: "... | currency: converts the number to currency (default is USD)
+               or you can set a parameter by writing "currency: " ":
+            Percent Pipe: num | percent, where num specifies the percentage:
             <li class="list-group-item">Balance: {{ user.balance | currency: "JPY" }} until {{ 0.5 | percent }}</li>
             
-            <!-- Date Pipe: you can format by putting colon (refer to Angular documentation -->
-            <!-- ex: "mm/dd/yyyy", "yyyy", "shortDate", "longDate", "fullDate", "shortTime" -->
+            Date Pipe: you can format by putting colon (refer to Angular documentation:
+              ex: "mm/dd/yyyy", "yyyy", "shortDate", "longDate", "fullDate", "shortTime":
             <li class="list-group-item">Joined: {{ user.registered | date }}</li>
             
-            <!-- Number Pipe: you can specify how many numbers to put in front of and after the decimal -->
-            <!-- ngNonBindable: will not bind the data to the string interpretation -->
+            Number Pipe: you can specify how many numbers to put in front of and after the decimal:
+            ngNonBindable: will not bind the data to the string interpretation:
             <li class="list-group-item" ngNonBindable>{{ 5 | number: "1.2"}}</li>
           
           </ul>
@@ -62,7 +64,8 @@
   </li>
 </ul>
 
-<!-- this or the code below will run and print the message if there aren't any users
- <ng-template #noUsers><h4>No Users Found</h4></ng-template>-->
+This or the code below will run and print the message if there aren't any users
+Alternative way: <ng-template #noUsers><h4>No Users Found</h4></ng-template>:
 <h4 *ngIf = "users?.length == 0">No Users Found</h4>
 <h4 *ngIf = "!loaded">Loading Users...</h4>
+ -->

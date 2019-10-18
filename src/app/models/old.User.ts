@@ -1,6 +1,6 @@
 
 // "?" will make parts of the interface optional 
-export interface User {
+/* export interface User {
   firstName: string,
   lastName: string,
   age?: number,
@@ -20,4 +20,4 @@ export interface User {
   // registered date for the user
   registered?: any
 
-}
+} */
